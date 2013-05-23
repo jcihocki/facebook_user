@@ -7,7 +7,7 @@ module StartupGiraffe
 
       base.field :facebook_uid, type: String
       base.attr_protected :facebook_uid
-      base.scope :by_facebook_uid, ->( uid ) { where( facebook_uid: uid ) }
+      base.scope :by_facebook_uid, ->( uid ) { base.where( facebook_uid: uid ) }
       base.validates_uniqueness_of :facebook_uid, :unless => ->() { self.facebook_uid.nil? }
 
       base.index( { facebook_uid: 1 }, { sparse: true, unique: true} )
@@ -20,9 +20,21 @@ module StartupGiraffe
         new_user =  self.new( params )
         new_user.facebook_uid = user.identifier
         if block_given?
-          block.call new_user, user.name, user.email
+          block.call new_user, user.name, user.email, user.picture
         end
         return new_user
+      end
+
+      def from_facebook_cookie client, cookie
+        begin
+          cookie_parts = FbGraph::Auth::Cookie.parse( client, cookie )
+          if cookie_parts['user_id']
+            return self.by_facebook_uid( cookie_parts['user_id'] ).first
+          end
+        rescue FbGraph::Auth::VerificationFailed
+          # This is reasonable, user not authed.
+        end
+        return nil
       end
     end
   end

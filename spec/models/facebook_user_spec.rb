@@ -63,6 +63,12 @@ describe StartupGiraffe::FacebookUser do
         end
       end
 
+      it "provides profile picture to the block" do
+        User.register_via_facebook( @token ) do |user, name, email, profile_pic|
+          profile_pic.index( "https" ).should_not be_nil
+        end
+      end
+
       context "if facebook user already registered" do
         before {
           @user = User.register_via_facebook( @token )
@@ -86,16 +92,29 @@ describe StartupGiraffe::FacebookUser do
 
   context "when authenticating" do
     before {
+      @fb_auth = FbGraph::Auth.new( "582610595105782", "bb6671ae47cad793658d5a5816e6f43a" )
       @cookie = "v9bnGapRWTmAbgNsPZDt0aEtTwdIf4kuaqt5MRsC1Gk.eyJhbGdvcml0aG0iOiJITUFDLVNIQTI1NiIsImNvZGUiOiJBUUNDZVZ2N09pMDY4NTE1Z0lReGM0UGpmWHZBN3RFbXZ2VHJ4V3U5SHphMTFTSlVvUmV4TDVLUGdKQjJaM2JoemEtZkE2RHhjUTNvQ1FZeGNQek8zS1BlcHdrU1hiMmFucC1PcEh1ME9FTlVCUWQxenVXQzdQVHFkaDVCdGljZWM4X1o4X3Yzb1gtOGpVQVFuV3lHOVc5VG91bmF3czdTQkVrNkYtUU54akJVdzdDOXZrS2FOQk5TX3R3VmVwOFlacmNJZUczWjVoakhlQUhBazFjb1hKWnpqU1lpTTVoTDFxZ0ctZENCSlhtZC14NjdpYTlvNDhGcjRRbUlybUtYSW5OdVNreFBqWDYtWTRISV9XakczZ1FHRW9NeFpmRTM5NXJhTnBzLTNoc01EUDZwNjlDSFVrYWR3R2xnWTNtWWFPR05xN3RBeWVESnh4NEYwQXZDWWhnYSIsImlzc3VlZF9hdCI6MTM2OTI2ODMxNywidXNlcl9pZCI6IjEwMDAwMTQyMjQ2MDk2NiJ9"
     }
 #   User.check_facebook_auth( )
 
-    it "returns a user with UID 124721440918604" do
+    context "if cookie not present" do
+      it "returns nil" do
+        User.from_facebook_cookie( @fb_auth.client, {} ).should be_nil
+      end
+    end
+
+    context "if cookie malformed" do
+      it "returns nil" do
+        User.from_facebook_cookie( @fb_auth.client, "JEAH!" ).should be_nil
+      end
+    end
+
+    it "returns a user with UID 100001422460966" do
       expect {
         user = User.new( email: "murr@slurr.com" )
-        user.facebook_uid = "124721440918604"
-      }
-      User.from_facebook_cookie( @cookie )
+        user.facebook_uid = "100001422460966"
+        user.save!
+      }.to change { User.from_facebook_cookie( @fb_auth.client, @cookie ).try( :facebook_uid ) }.from( nil ).to( "100001422460966" )
     end
   end
 end
