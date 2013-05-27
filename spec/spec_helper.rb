@@ -4,6 +4,7 @@ $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), "..", "lib"))
 require "rspec"
 require "startup_giraffe/facebook_user"
 require "factory_girl"
+require "fb_graph"
 
 # Set the database that the spec suite connects to.
 Mongoid.configure do |config|
@@ -23,4 +24,9 @@ RSpec.configure do |config|
   end
 end
 
+
+ENV['FACEBOOK_APP_ID'] ||= "582610595105782"
+ENV['FACEBOOK_SECRET'] ||= "bb6671ae47cad793658d5a5816e6f43a"
+$fb_app = FbGraph::Application.new( ENV['FACEBOOK_APP_ID'], :secret => ENV['FACEBOOK_SECRET'] )
+$fb_auth = FbGraph::Auth.new( ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_SECRET'] )
 

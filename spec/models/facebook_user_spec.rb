@@ -1,9 +1,9 @@
 require 'spec_helper'
-require 'fb_graph'
 
 describe StartupGiraffe::FacebookUser do
   before {
-    @fb_app = FbGraph::Application.new( "582610595105782", :secret => "bb6671ae47cad793658d5a5816e6f43a" )
+    @fb_app = $fb_app
+    User.create_indexes
   }
 
   it "doesn't allow inclusion in non mongoid docs" do
@@ -87,15 +87,14 @@ describe StartupGiraffe::FacebookUser do
     expect {
       User.create!( email: 'yurr@hurr.com' )
       User.create!( email: 'ra@ya.com' )
-    }.to change { User.where( :facebook_uid => nil ).count }.from( 0 ).to 2
+    }.to change { User.count }.from( 0 ).to 2
   end
 
-  context "when authenticating" do
+  context "when checking authorization" do
     before {
-      @fb_auth = FbGraph::Auth.new( "582610595105782", "bb6671ae47cad793658d5a5816e6f43a" )
+      @fb_auth = $fb_auth
       @cookie = "v9bnGapRWTmAbgNsPZDt0aEtTwdIf4kuaqt5MRsC1Gk.eyJhbGdvcml0aG0iOiJITUFDLVNIQTI1NiIsImNvZGUiOiJBUUNDZVZ2N09pMDY4NTE1Z0lReGM0UGpmWHZBN3RFbXZ2VHJ4V3U5SHphMTFTSlVvUmV4TDVLUGdKQjJaM2JoemEtZkE2RHhjUTNvQ1FZeGNQek8zS1BlcHdrU1hiMmFucC1PcEh1ME9FTlVCUWQxenVXQzdQVHFkaDVCdGljZWM4X1o4X3Yzb1gtOGpVQVFuV3lHOVc5VG91bmF3czdTQkVrNkYtUU54akJVdzdDOXZrS2FOQk5TX3R3VmVwOFlacmNJZUczWjVoakhlQUhBazFjb1hKWnpqU1lpTTVoTDFxZ0ctZENCSlhtZC14NjdpYTlvNDhGcjRRbUlybUtYSW5OdVNreFBqWDYtWTRISV9XakczZ1FHRW9NeFpmRTM5NXJhTnBzLTNoc01EUDZwNjlDSFVrYWR3R2xnWTNtWWFPR05xN3RBeWVESnh4NEYwQXZDWWhnYSIsImlzc3VlZF9hdCI6MTM2OTI2ODMxNywidXNlcl9pZCI6IjEwMDAwMTQyMjQ2MDk2NiJ9"
     }
-#   User.check_facebook_auth( )
 
     context "if cookie not present" do
       it "returns nil" do

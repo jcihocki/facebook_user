@@ -30,28 +30,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="facebook_user.rb" pinned="false" current="true" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/lib/startup_giraffe/facebook_user.rb">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="22" column="66" selection-start="898" selection-end="898" vertical-scroll-proportion="0.5092593">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="spec_helper.rb" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/spec/spec_helper.rb">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="21" column="30" selection-start="654" selection-end="654" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="user.rb" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/spec/factories/user.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="9" column="19" selection-start="156" selection-end="156" vertical-scroll-proportion="0.0">
+                <state line="16" column="39" selection-start="205" selection-end="205" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -60,16 +42,7 @@
           <file leaf-file-name="facebook_user_spec.rb" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/spec/models/facebook_user_spec.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="5" column="106" selection-start="200" selection-end="200" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="test_users.rb" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$USER_HOME$/.rvm/gems/ruby-1.9.3-p194/gems/fb_graph-2.6.4/lib/fb_graph/connections/test_users.rb">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="14" column="13" selection-start="554" selection-end="554" vertical-scroll-proportion="0.0">
+                <state line="4" column="14" selection-start="89" selection-end="89" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -84,6 +57,42 @@
               </provider>
             </entry>
           </file>
+          <file leaf-file-name="facebook_user.rb" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/lib/startup_giraffe/facebook_user.rb">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="9" column="17" selection-start="322" selection-end="322" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="test_users.rb" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$USER_HOME$/.rvm/gems/ruby-1.9.3-p194/gems/fb_graph-2.6.4/lib/fb_graph/connections/test_users.rb">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="14" column="13" selection-start="554" selection-end="554" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="spec_helper.rb" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/spec/spec_helper.rb">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="16" column="30" selection-start="498" selection-end="498" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="facebook_user.gemspec" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/facebook_user.gemspec">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="3" column="30" selection-start="101" selection-end="101" vertical-scroll-proportion="0.06944445">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
         </leaf>
       </split-first>
       <split-second>
@@ -91,7 +100,7 @@
           <file leaf-file-name="facebook_user_spec.rb" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/spec/models/facebook_user_spec.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="67" column="28" selection-start="2088" selection-end="2088" vertical-scroll-proportion="0.6950673">
+                <state line="16" column="86" selection-start="356" selection-end="413" vertical-scroll-proportion="0.3726708">
                   <folding />
                 </state>
               </provider>
@@ -121,12 +130,12 @@
         <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/lib/facebook_user/version.rb" />
         <option value="$PROJECT_DIR$/lib/facebook_user.rb" />
-        <option value="$PROJECT_DIR$/facebook_user.gemspec" />
         <option value="$PROJECT_DIR$/lib/startup_giraffe/facebook_user/version.rb" />
-        <option value="$PROJECT_DIR$/spec/spec_helper.rb" />
+        <option value="$PROJECT_DIR$/lib/startup_giraffe/facebook_user.rb" />
         <option value="$PROJECT_DIR$/spec/factories/user.rb" />
         <option value="$PROJECT_DIR$/spec/models/facebook_user_spec.rb" />
-        <option value="$PROJECT_DIR$/lib/startup_giraffe/facebook_user.rb" />
+        <option value="$PROJECT_DIR$/spec/spec_helper.rb" />
+        <option value="$PROJECT_DIR$/facebook_user.gemspec" />
       </list>
     </option>
   </component>
@@ -161,6 +170,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -271,7 +281,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -285,41 +294,7 @@
       <recent name="$PROJECT_DIR$/lib/startup_giraffe" />
     </key>
   </component>
-  <component name="RunManager" selected="RSpec.StartupGiraffe::FacebookUser when registering the user provides profile picture to the block">
-    <configuration default="false" name="StartupGiraffe::FacebookUser when authenticating returns a user with UID 124721440918604" type="RSpecRunConfigurationType" factoryName="RSpec" temporary="true">
-      <predefined_log_file id="RUBY_RSPEC" enabled="true" />
-      <module name="facebook_user" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$PROJECT_DIR$/spec/models" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
-      <envs>
-        <env name="JRUBY_OPTS" value="-X+O" />
-      </envs>
-      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="true" />
-      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov">
-        <COVERAGE_PATTERN ENABLED="true">
-          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
-        </COVERAGE_PATTERN>
-      </EXTENSION>
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$PROJECT_DIR$/spec/models/facebook_user_spec.rb" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_RUNNER_PATH" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="**/*_spec.rb" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_EXAMPLE_NAME" VALUE="StartupGiraffe::FacebookUser when authenticating returns a user with UID 124721440918604" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_ARGS" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_VERSION" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="USE_CUSTOM_SPEC_RUNNER" VALUE="false" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
-      <RunnerSettings RunnerId="RubyDebugRunner" />
-      <RunnerSettings RunnerId="RubyRunner" />
-      <ConfigurationWrapper RunnerId="RubyDebugRunner" />
-      <ConfigurationWrapper RunnerId="RubyRunner" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="RSpec.StartupGiraffe::FacebookUser">
     <configuration default="false" name="StartupGiraffe::FacebookUser when authenticating" type="RSpecRunConfigurationType" factoryName="RSpec" temporary="true">
       <predefined_log_file id="RUBY_RSPEC" enabled="true" />
       <module name="facebook_user" />
@@ -448,6 +423,40 @@
       <ConfigurationWrapper RunnerId="RubyRunner" />
       <method />
     </configuration>
+    <configuration default="false" name="StartupGiraffe::FacebookUser allows facebook uid to be nil" type="RSpecRunConfigurationType" factoryName="RSpec" temporary="true">
+      <predefined_log_file id="RUBY_RSPEC" enabled="true" />
+      <module name="facebook_user" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$PROJECT_DIR$/spec/models" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs>
+        <env name="JRUBY_OPTS" value="-X+O" />
+      </envs>
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="true" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$PROJECT_DIR$/spec/models/facebook_user_spec.rb" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_RUNNER_PATH" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="**/*_spec.rb" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_EXAMPLE_NAME" VALUE="StartupGiraffe::FacebookUser allows facebook uid to be nil" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_ARGS" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_VERSION" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="USE_CUSTOM_SPEC_RUNNER" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
+      <RunnerSettings RunnerId="RubyDebugRunner" />
+      <RunnerSettings RunnerId="RubyRunner" />
+      <ConfigurationWrapper RunnerId="RubyDebugRunner" />
+      <ConfigurationWrapper RunnerId="RubyRunner" />
+      <method />
+    </configuration>
     <configuration default="true" type="RSpecRunConfigurationType" factoryName="RSpec">
       <predefined_log_file id="RUBY_RSPEC" enabled="true" />
       <module name="" />
@@ -501,19 +510,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="RSpec.StartupGiraffe::FacebookUser when authenticating returns a user with UID 124721440918604" />
-      <item index="1" class="java.lang.String" itemvalue="RSpec.StartupGiraffe::FacebookUser when authenticating" />
-      <item index="2" class="java.lang.String" itemvalue="RSpec.StartupGiraffe::FacebookUser when authenticating returns a user with UID 100001422460966" />
-      <item index="3" class="java.lang.String" itemvalue="RSpec.StartupGiraffe::FacebookUser" />
-      <item index="4" class="java.lang.String" itemvalue="RSpec.StartupGiraffe::FacebookUser when registering the user provides profile picture to the block" />
+      <item index="0" class="java.lang.String" itemvalue="RSpec.StartupGiraffe::FacebookUser when authenticating" />
+      <item index="1" class="java.lang.String" itemvalue="RSpec.StartupGiraffe::FacebookUser when authenticating returns a user with UID 100001422460966" />
+      <item index="2" class="java.lang.String" itemvalue="RSpec.StartupGiraffe::FacebookUser" />
+      <item index="3" class="java.lang.String" itemvalue="RSpec.StartupGiraffe::FacebookUser when registering the user provides profile picture to the block" />
+      <item index="4" class="java.lang.String" itemvalue="RSpec.StartupGiraffe::FacebookUser allows facebook uid to be nil" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="RSpec.StartupGiraffe::FacebookUser when registering the user provides profile picture to the block" />
-        <item index="1" class="java.lang.String" itemvalue="RSpec.StartupGiraffe::FacebookUser" />
-        <item index="2" class="java.lang.String" itemvalue="RSpec.StartupGiraffe::FacebookUser when authenticating returns a user with UID 100001422460966" />
-        <item index="3" class="java.lang.String" itemvalue="RSpec.StartupGiraffe::FacebookUser when authenticating" />
-        <item index="4" class="java.lang.String" itemvalue="RSpec.StartupGiraffe::FacebookUser when authenticating returns a user with UID 124721440918604" />
+        <item index="0" class="java.lang.String" itemvalue="RSpec.StartupGiraffe::FacebookUser" />
+        <item index="1" class="java.lang.String" itemvalue="RSpec.StartupGiraffe::FacebookUser allows facebook uid to be nil" />
+        <item index="2" class="java.lang.String" itemvalue="RSpec.StartupGiraffe::FacebookUser when registering the user provides profile picture to the block" />
+        <item index="3" class="java.lang.String" itemvalue="RSpec.StartupGiraffe::FacebookUser when authenticating returns a user with UID 100001422460966" />
+        <item index="4" class="java.lang.String" itemvalue="RSpec.StartupGiraffe::FacebookUser when authenticating" />
       </list>
     </recent_temporary>
   </component>
@@ -534,8 +543,8 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2524013" sideWeight="0.67045456" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39962122" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25773746" sideWeight="0.67045456" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25757575" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32954547" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -609,13 +618,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/lib/startup_giraffe/facebook_user.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="90" selection-start="471" selection-end="471" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/spec/spec_helper.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="21" column="30" selection-start="654" selection-end="654" vertical-scroll-proportion="0.0">
@@ -658,11 +660,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/facebook_user.gemspec">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="44" selection-start="760" selection-end="760" vertical-scroll-proportion="0.4398827" />
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.rvm/gems/ruby-1.9.3-p194/gems/fb_graph-2.6.4/lib/fb_graph/test_user.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="38" selection-start="555" selection-end="555" vertical-scroll-proportion="0.41788855" />
@@ -682,20 +679,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spec/spec_helper.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="30" selection-start="654" selection-end="654" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spec/factories/user.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="19" selection-start="156" selection-end="156" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.rvm/gems/ruby-1.9.3-p194/gems/fb_graph-2.6.4/lib/fb_graph/auth/cookie.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="14" column="0" selection-start="360" selection-end="360" vertical-scroll-proportion="0.0">
@@ -703,16 +686,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spec/models/facebook_user_spec.rb">
+    <entry file="file://$PROJECT_DIR$/lib/startup_giraffe/facebook_user.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="106" selection-start="200" selection-end="200" vertical-scroll-proportion="0.0">
+        <state line="9" column="17" selection-start="322" selection-end="322" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/startup_giraffe/facebook_user.rb">
+    <entry file="file://$PROJECT_DIR$/spec/factories/user.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="66" selection-start="898" selection-end="898" vertical-scroll-proportion="0.5092593">
+        <state line="16" column="39" selection-start="205" selection-end="205" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/models/facebook_user_spec.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="14" selection-start="89" selection-end="89" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/spec_helper.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="30" selection-start="498" selection-end="498" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gemfile.lock">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="35" selection-start="587" selection-end="587" vertical-scroll-proportion="0.5267296">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/facebook_user.gemspec">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="30" selection-start="101" selection-end="101" vertical-scroll-proportion="0.06944445">
           <folding />
         </state>
       </provider>

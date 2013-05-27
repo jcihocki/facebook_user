@@ -7,8 +7,6 @@ class User
   field :email, type: String
 end
 
-User.create_indexes
-
 FactoryGirl.define do
   factory :facebook_test_user do
 
