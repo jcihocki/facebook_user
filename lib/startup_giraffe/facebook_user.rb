@@ -1,4 +1,5 @@
 require 'mongoid'
+require_relative 'facebook_user/cookie'
 
 module StartupGiraffe
   module FacebookUser
@@ -11,6 +12,12 @@ module StartupGiraffe
       base.validates_uniqueness_of :facebook_uid, :unless => ->() { self.facebook_uid.nil? }
 
       base.index( { facebook_uid: 1 }, { sparse: true, unique: true} )
+      
+      class << base
+        attr_accessor :cookie_cache_attrs
+      end
+      base.cookie_cache_attrs = []
+      
       base.extend ClassMethods
     end
 
@@ -35,6 +42,51 @@ module StartupGiraffe
           # This is reasonable, user not authed.
         end
         return nil
+      end
+      
+      def logged_in_user client, request
+        if request && request.cookies && request.cookies[facebook_cookie_name]
+          user = from_facebook_cookie client, request.cookies[facebook_cookie_name]
+          set_facebook_cookie_cache request if user
+          request[:logged_in_user] ||= user
+        end
+      end
+      
+      def cookie_cache request
+        cookie = facebook_cookie( request )
+        if request && request.cookies && cookie
+          if cookie.cache
+            cookie.cache
+          else
+            cookie = set_facebook_cookie_cache request
+            cookie.cache
+          end
+        end
+      end
+      
+      def set_facebook_cookie_cache request
+        user = from_facebook_cookie( FbGraph::Auth.new( ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_SECRET'] ).client, request.cookies[facebook_cookie_name] )
+        if request && request.cookies && user
+          new_cookie = facebook_cookie request
+          new_cookie.add_to_cache self.cookie_cache_attrs.each_with_object({}) { |attr, hash| hash[attr] = user.public_send( attr ).to_s }
+          request.cookies[facebook_cookie_name] = new_cookie.to_s
+          return new_cookie
+        end
+      end
+      
+      def facebook_cookie( request )
+        return Cookie.new request.cookies[facebook_cookie_name], ENV['FACEBOOK_SECRET'] if request.cookies[facebook_cookie_name]
+        nil
+      end
+      
+      def facebook_cookie_name
+        "fbsr_#{ENV['FACEBOOK_APP_ID']}"
+      end
+      
+      def cache_in_cookie *args
+        args.each do |arg|
+          self.cookie_cache_attrs << arg
+        end
       end
     end
   end

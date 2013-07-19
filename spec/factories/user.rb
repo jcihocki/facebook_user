@@ -13,4 +13,24 @@ FactoryGirl.define do
   end
 end
 
+class FudgedController
+  attr_accessor :request
 
+  def initialize
+    @request = FudgedRequest.new
+  end
+  
+  def cookies
+    @request.cookies
+  end
+  
+end
+
+class FudgedRequest < Hash
+  attr_accessor :cookies
+  
+  def initialize
+    @cookies = {}
+  end
+  
+end

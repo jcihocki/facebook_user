@@ -115,5 +115,107 @@ describe StartupGiraffe::FacebookUser do
         user.save!
       }.to change { User.from_facebook_cookie( @fb_auth.client, @cookie ).try( :facebook_uid ) }.from( nil ).to( "100001422460966" )
     end
+    
+    context "if the cookie has extra data cached in it" do
+      
+      before {
+        @ctlr = FudgedController.new
+        @ctlr.cookies["fbsr_#{ENV['FACEBOOK_APP_ID']}"] = "v9bnGapRWTmAbgNsPZDt0aEtTwdIf4kuaqt5MRsC1Gk.eyJhbGdvcml0aG0iOiJITUFDLVNIQTI1NiIsImNvZGUiOiJBUUNDZVZ2N09pMDY4NTE1Z0lReGM0UGpmWHZBN3RFbXZ2VHJ4V3U5SHphMTFTSlVvUmV4TDVLUGdKQjJaM2JoemEtZkE2RHhjUTNvQ1FZeGNQek8zS1BlcHdrU1hiMmFucC1PcEh1ME9FTlVCUWQxenVXQzdQVHFkaDVCdGljZWM4X1o4X3Yzb1gtOGpVQVFuV3lHOVc5VG91bmF3czdTQkVrNkYtUU54akJVdzdDOXZrS2FOQk5TX3R3VmVwOFlacmNJZUczWjVoakhlQUhBazFjb1hKWnpqU1lpTTVoTDFxZ0ctZENCSlhtZC14NjdpYTlvNDhGcjRRbUlybUtYSW5OdVNreFBqWDYtWTRISV9XakczZ1FHRW9NeFpmRTM5NXJhTnBzLTNoc01EUDZwNjlDSFVrYWR3R2xnWTNtWWFPR05xN3RBeWVESnh4NEYwQXZDWWhnYSIsImlzc3VlZF9hdCI6MTM2OTI2ODMxNywidXNlcl9pZCI6IjEwMDAwMTQyMjQ2MDk2NiJ9"
+        @user = User.new( email: "murr@slurr.com" )
+        @user.facebook_uid = "100001422460966"
+        @user.save!
+        User.cache_in_cookie :id
+        User.logged_in_user( @fb_auth.client, @ctlr.request ) # sets the cookie cache
+      }
+      
+      after {
+        User.cookie_cache_attrs = []
+      }
+      
+      it "still returns the user" do
+        User.from_facebook_cookie( @fb_auth.client, @ctlr.cookies["fbsr_#{ENV['FACEBOOK_APP_ID']}"] ).should == @user
+      end
+      
+    end
+    
+    describe "logged_in_user" do
+      
+      before {
+        @ctlr = FudgedController.new
+      }
+      
+      context "if theres no fb_cookie" do
+        
+        it "is nil" do
+          User.logged_in_user( @fb_auth.client, @ctlr.request ).should be_nil
+        end
+        
+      end
+      
+      context "if there is a fb cookie" do
+        
+        before {
+          @ctlr.cookies["fbsr_#{ENV['FACEBOOK_APP_ID']}"] = "v9bnGapRWTmAbgNsPZDt0aEtTwdIf4kuaqt5MRsC1Gk.eyJhbGdvcml0aG0iOiJITUFDLVNIQTI1NiIsImNvZGUiOiJBUUNDZVZ2N09pMDY4NTE1Z0lReGM0UGpmWHZBN3RFbXZ2VHJ4V3U5SHphMTFTSlVvUmV4TDVLUGdKQjJaM2JoemEtZkE2RHhjUTNvQ1FZeGNQek8zS1BlcHdrU1hiMmFucC1PcEh1ME9FTlVCUWQxenVXQzdQVHFkaDVCdGljZWM4X1o4X3Yzb1gtOGpVQVFuV3lHOVc5VG91bmF3czdTQkVrNkYtUU54akJVdzdDOXZrS2FOQk5TX3R3VmVwOFlacmNJZUczWjVoakhlQUhBazFjb1hKWnpqU1lpTTVoTDFxZ0ctZENCSlhtZC14NjdpYTlvNDhGcjRRbUlybUtYSW5OdVNreFBqWDYtWTRISV9XakczZ1FHRW9NeFpmRTM5NXJhTnBzLTNoc01EUDZwNjlDSFVrYWR3R2xnWTNtWWFPR05xN3RBeWVESnh4NEYwQXZDWWhnYSIsImlzc3VlZF9hdCI6MTM2OTI2ODMxNywidXNlcl9pZCI6IjEwMDAwMTQyMjQ2MDk2NiJ9"
+          @user = User.new( email: "murr@slurr.com" )
+          @user.facebook_uid = "100001422460966"
+          @user.save!
+        }
+        
+        it "returns a user associated with that cookie" do
+          User.logged_in_user( @fb_auth.client, @ctlr.request ).should == @user
+        end
+        
+      end
+      
+    end
+    
   end
+
+  describe "cookie_cache" do
+    
+    before {
+      @ctlr = FudgedController.new
+    }
+    
+    context "if the fb cookie is nil" do
+      
+      it "is nil" do
+        User.cookie_cache( @ctlr.request ).should be_nil
+      end
+      
+    end
+    
+    context "if the fb cookie is not nil" do
+      
+      before {
+        @ctlr.cookies["fbsr_#{ENV['FACEBOOK_APP_ID']}"] = "v9bnGapRWTmAbgNsPZDt0aEtTwdIf4kuaqt5MRsC1Gk.eyJhbGdvcml0aG0iOiJITUFDLVNIQTI1NiIsImNvZGUiOiJBUUNDZVZ2N09pMDY4NTE1Z0lReGM0UGpmWHZBN3RFbXZ2VHJ4V3U5SHphMTFTSlVvUmV4TDVLUGdKQjJaM2JoemEtZkE2RHhjUTNvQ1FZeGNQek8zS1BlcHdrU1hiMmFucC1PcEh1ME9FTlVCUWQxenVXQzdQVHFkaDVCdGljZWM4X1o4X3Yzb1gtOGpVQVFuV3lHOVc5VG91bmF3czdTQkVrNkYtUU54akJVdzdDOXZrS2FOQk5TX3R3VmVwOFlacmNJZUczWjVoakhlQUhBazFjb1hKWnpqU1lpTTVoTDFxZ0ctZENCSlhtZC14NjdpYTlvNDhGcjRRbUlybUtYSW5OdVNreFBqWDYtWTRISV9XakczZ1FHRW9NeFpmRTM5NXJhTnBzLTNoc01EUDZwNjlDSFVrYWR3R2xnWTNtWWFPR05xN3RBeWVESnh4NEYwQXZDWWhnYSIsImlzc3VlZF9hdCI6MTM2OTI2ODMxNywidXNlcl9pZCI6IjEwMDAwMTQyMjQ2MDk2NiJ9"
+        @user = User.new( email: "murr@slurr.com" )
+        @user.facebook_uid = "100001422460966"
+        @user.save!
+      }
+      
+      it "is a hash containing the cached attributes" do
+        User.cookie_cache( @ctlr.request ).should == {}
+      end
+      
+      context "if attributes are added to cache_in_cookie" do
+        
+        before {
+          User.cache_in_cookie :id
+        }
+        
+        after {
+          User.cookie_cache_attrs = []
+        }
+        
+        it "returns all the attributes added to the cache" do
+          User.cookie_cache( @ctlr.request )[:id].should == @user.id.to_s
+        end
+        
+      end
+      
+    end
+    
+  end
+
 end
